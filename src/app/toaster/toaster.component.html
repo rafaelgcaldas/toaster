@@ -6,7 +6,12 @@
         [class.info]="toast.type === 'info'" 
         *ngFor="let toast of listToast"
     >
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+        <div class="icon">
+            <i class="fa fa-smile-o" aria-hidden="true" *ngIf="toast.type === 'success'"></i>
+            <i class="fa fa-frown-o" aria-hidden="true" *ngIf="toast.type === 'error'"></i>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true" *ngIf="toast.type === 'warning'"></i>
+            <i class="fa fa-info-circle" aria-hidden="true" *ngIf="toast.type === 'info'"></i>
+        </div>
         <div class="toast-content">
             <div class="toast-title">
                 {{ toast.title }}
