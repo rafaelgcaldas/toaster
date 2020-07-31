@@ -27,6 +27,18 @@
     background: green;
 }
 
+.toast-container.error {
+    background: red;
+}
+
+.toast-container.warning {
+    background: yellow;
+}
+
+.toast-container.info {
+    background: blue;
+}
+
 .toast-container .icon {
     min-width: 40px;
 

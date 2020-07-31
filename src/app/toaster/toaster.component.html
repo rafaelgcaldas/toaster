@@ -1,72 +1,18 @@
 <div class="toast-wrapper">
-    <div class="toast-container success">
+    <div class="toast-container" 
+        [class.success]="toast.type === 'success'" 
+        [class.error]="toast.type === 'error'" 
+        [class.warning]="toast.type === 'warning'" 
+        [class.info]="toast.type === 'info'" 
+        *ngFor="let toast of listToast"
+    >
         <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
         <div class="toast-content">
             <div class="toast-title">
-                Atenção!!
+                {{ toast.title }}
             </div>
             <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
-            </div>
-        </div>
-    </div>
-    
-    <div class="toast-container success">
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-        <div class="toast-content">
-            <div class="toast-title">
-                Atenção!!
-            </div>
-            <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
-            </div>
-        </div>
-    </div>
-    
-    <div class="toast-container success">
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-        <div class="toast-content">
-            <div class="toast-title">
-                Atenção!!
-            </div>
-            <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
-            </div>
-        </div>
-    </div>
-    
-    <div class="toast-container success">
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-        <div class="toast-content">
-            <div class="toast-title">
-                Atenção!!
-            </div>
-            <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
-            </div>
-        </div>
-    </div>
-    
-    <div class="toast-container success">
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-        <div class="toast-content">
-            <div class="toast-title">
-                Atenção!!
-            </div>
-            <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
-            </div>
-        </div>
-    </div>
-    
-    <div class="toast-container success">
-        <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-        <div class="toast-content">
-            <div class="toast-title">
-                Atenção!!
-            </div>
-            <div class="toast-body">
-                Some text inside the toast body Some text inside the toast body 
+                {{ toast.message }} 
             </div>
         </div>
     </div>
