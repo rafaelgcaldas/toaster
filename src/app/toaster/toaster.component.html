@@ -4,7 +4,8 @@
         [class.error]="toast.type === 'error'" 
         [class.warning]="toast.type === 'warning'" 
         [class.info]="toast.type === 'info'" 
-        *ngFor="let toast of listToast"
+        *ngFor="let toast of listToast, let i = index"
+        (click)="closeToaster(i)"
     >
         <div class="icon">
             <i class="fa fa-smile-o" aria-hidden="true" *ngIf="toast.type === 'success'"></i>
