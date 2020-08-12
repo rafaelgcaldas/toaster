@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription, Observable, timer, interval } from 'rxjs';
-import { tap, switchMap, takeUntil } from 'rxjs/operators';
+import { tap, switchMap, takeUntil, take } from 'rxjs/operators';
 
 import { Toaster } from './toaster.model';
 import { ToasterService } from './toaster.service'
@@ -26,28 +26,24 @@ export class ToasterComponent implements OnInit {
       .pipe(
         tap((toast: Toaster) => {
           this.listToast.push(toast);
+          this.listToast.forEach( toast => {
+              toast.display = true;
+          });
+
         }),
         switchMap(() => timer(3000))
       )
       .subscribe(
         () => {
-          this.ArrayEmpty(this.listToast)
+          this.clearListToaster(this.listToast)
         }
       )
   }
 
-  public ArrayEmpty(array) {
-    console.log("teste", array)
-    if(array.length > 0) {
-      const numbers = timer(500);
-        numbers.subscribe(
-          () => {
-            array.shift();
-            this.ArrayEmpty(array);
-          })
-    } else {
-      return;
-    }
+  public clearListToaster(listToast: Toaster[]) {
+      const timer = interval(750);
+      const takeForListLenght = timer.pipe(take(listToast.length));
+      takeForListLenght.subscribe(() => listToast.shift())
   }
 
   public closeToaster(index: number) {

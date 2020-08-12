@@ -3,7 +3,8 @@
         [class.success]="toast.type === 'success'" 
         [class.error]="toast.type === 'error'" 
         [class.warning]="toast.type === 'warning'" 
-        [class.info]="toast.type === 'info'" 
+        [class.info]="toast.type === 'info'"
+        [class.show]="toast.display === true"
         *ngFor="let toast of listToast, let i = index"
         (click)="closeToaster(i)"
     >

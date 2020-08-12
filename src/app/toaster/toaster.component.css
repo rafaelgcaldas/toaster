@@ -3,6 +3,10 @@
     top: 0;
     right: 0;
     z-index: 9999;
+
+    height: 100vh;
+
+    overflow: hidden;
 }
 
 .toast-container {
@@ -19,8 +23,18 @@
 
     position: relative;
     top: 0;
-    right: 0;
+    right: -500px;
+
     z-index: 9999;
+    opacity: 0;
+    cursor: pointer;
+
+    transition: right, opacity, 0.35s;
+}
+
+.toast-container.show {
+    right: 0px !important;
+    opacity: 1 !important;
 }
 
 .toast-container.success {
