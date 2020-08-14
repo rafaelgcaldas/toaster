@@ -14,8 +14,7 @@
 
     width: 300px;
     min-height: 80px;
-    background-color: #fff;
-    border: 1px solid rgba(255,255,255,.1);
+    border: 0;
     border-radius: 4px;
 
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
@@ -38,19 +37,39 @@
 }
 
 .toast-container.success {
-    background: green;
+    background: #00C853;
+}
+
+.toast-container.success:hover {
+    background: #00E676;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .toast-container.error {
-    background: red;
+    background: #DD2C00;
+}
+
+.toast-container.error:hover {
+    background: #FF3D00;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .toast-container.warning {
-    background: yellow;
+    background: #FFD600;
+}
+
+.toast-container.warning:hover {
+    background: #FFEA00;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .toast-container.info {
-    background: blue;
+    background: #0091EA;
+}
+
+.toast-container.info:hover {
+    background: #00B0FF;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .toast-container .icon {

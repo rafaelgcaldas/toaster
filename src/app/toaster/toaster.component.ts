@@ -25,9 +25,12 @@ export class ToasterComponent implements OnInit {
     this.unsubscribe = this.toasterService.notifier
       .pipe(
         tap((toast: Toaster) => {
+          this.clearListToaster([])
           this.listToast.push(toast);
           this.listToast.forEach( toast => {
+            setTimeout(() => {
               toast.display = true;
+            }, 100);
           });
 
         }),
@@ -41,9 +44,11 @@ export class ToasterComponent implements OnInit {
   }
 
   public clearListToaster(listToast: Toaster[]) {
-      const timer = interval(750);
-      const takeForListLenght = timer.pipe(take(listToast.length));
-      takeForListLenght.subscribe(() => listToast.shift())
+    const timer = interval(750);
+    const takeForListLenght = timer.pipe(take(listToast.length));
+    takeForListLenght.subscribe(() => {
+      listToast.shift()
+    })
   }
 
   public closeToaster(index: number) {
