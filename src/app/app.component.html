@@ -1,3 +1,12 @@
 <app-toaster></app-toaster>
-<h1>Toaster</h1>
-<button (click)="startToaster()">Toaster</button>
+<div class="container">
+    <div class="header">
+        <h1>A simple Toast component</h1>
+    </div>
+    <div class="body">
+        <button class="success" (click)="toasterSuccess()">Toaster Success</button>
+        <button class="info" (click)="toasterInfo()">Toaster Info</button>
+        <button class="warning" (click)="toasterWarning()">Toaster Warning</button>
+        <button class="error" (click)="toasterError()">Toaster Error</button>
+    </div>
+</div>
