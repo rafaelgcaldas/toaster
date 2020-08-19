@@ -74,12 +74,12 @@
 
 .container .body button.warning {
     background: #fff;
-    color: #FFEA00;
-    border: 1px solid #FFEA00;
+    color: #FF6D00;
+    border: 1px solid #FF6D00;
 }
 
 .container .body button.warning:hover {
-    background: #FFEA00;
+    background: #FF6D00;
     color: #fff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19);
 }
