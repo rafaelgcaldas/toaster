@@ -84,10 +84,14 @@
 }
 
 .toast-container .toast-content {
+    width: 100%;
     padding: 8px 8px 8px 4px;
 }
 
 .toast-container .toast-content .toast-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #fff;
     padding: 0 0 4px 4px;
     font-weight: 500;

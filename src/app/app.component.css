@@ -44,8 +44,20 @@
     -ms-user-select: none;
     user-select: none;
     margin: 5px;
-    transition: .35s;
+    transition: .2s;
     outline: none;
+}
+
+.container .body button:hover {
+    transform: scale(1.05);
+}
+
+
+.container .body button:active,
+.container .body button:active,
+.container .body button:active,
+.container .body button:active {
+    transform:scale(0.95);
 }
 
 .container .body button.success {
